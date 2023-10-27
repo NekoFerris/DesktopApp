@@ -18,6 +18,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Andreas_ShopBase\ShopBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="ShopBase" />
   </ItemGroup>
 
