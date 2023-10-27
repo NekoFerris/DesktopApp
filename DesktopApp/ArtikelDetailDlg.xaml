@@ -1,0 +1,86 @@
+﻿<Window
+    x:Class="DesktopApp.ArtikelDetailDlg"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DesktopApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Artikel Detail Dialog"
+    Width="235"
+    Height="250"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            x:Name="lbBez"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Bezeichnung" />
+        <Label
+            x:Name="lbBesch"
+            Margin="11,91,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Beschreibung" />
+        <Label
+            x:Name="lbPreis"
+            Margin="11,33,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Preis" />
+        <TextBox
+            x:Name="tbBez"
+            Width="116"
+            Margin="97,14,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="tbPreis"
+            Width="116"
+            Margin="97,38,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="lbWaehr"
+            Margin="213,33,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="€" />
+        <TextBox
+            x:Name="tbBesch"
+            Width="116"
+            Margin="97,60,0,11"
+            HorizontalAlignment="Left"
+            Text=""
+            TextWrapping="Wrap" />
+        <Button
+            x:Name="btnBest"
+            Width="77"
+            Margin="10,0,0,61"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Click="BtnBest_Click"
+            Content="Bestätigen" />
+        <Button
+            x:Name="btnAbr"
+            Width="77"
+            Margin="10,0,0,36"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Click="BtnAbr_Click"
+            Content="Abbrechen" />
+        <Button
+            x:Name="btnZur"
+            Width="77"
+            Margin="10,0,0,11"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Click="BtnZur_Click"
+            Content="Zurücksetzen" />
+    </Grid>
+</Window>

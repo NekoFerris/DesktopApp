@@ -1,0 +1,56 @@
+﻿<Window
+    x:Class="FWIWebShop.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:FWIWebShop"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="WebShop"
+    Width="500"
+    Height="450"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <TabControl x:Name="tabControl">
+        <TabItem Header="Artikel">
+            <Grid>
+                <Button
+                    x:Name="btnNeu"
+                    Height="20"
+                    Margin="10,0,0,10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Click="BtnNeu_Click"
+                    Content="Neu" />
+                <Button
+                    x:Name="btnBearbeiten"
+                    Height="20"
+                    Margin="41,0,0,10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Click="BtnBearbeiten_Click"
+                    Content="Bearbeiten"
+                    IsEnabled="False" />
+                <Button
+                    x:Name="btnLoeschen"
+                    Height="20"
+                    Margin="107,0,0,10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Click="BtnLoeschen_Click"
+                    Content="Löschen"
+                    IsEnabled="False" />
+                <ListBox
+                    x:Name="lbArtikel"
+                    Margin="0,10,0,35"
+                    FontFamily="Lucida Console"
+                    SelectionChanged="LbArtikel_SelectionChanged" />
+            </Grid>
+        </TabItem>
+        <TabItem Header="Kunden">
+            <Grid />
+        </TabItem>
+        <TabItem Header="Bestellungen">
+            <Grid />
+        </TabItem>
+    </TabControl>
+</Window>
