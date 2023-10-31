@@ -67,7 +67,8 @@ jobs:
     - name: Checkout Submodule
       uses: actions/checkout@v4.1.1
       with:
-        repository: BSZWiesauUnofficial/Andreas_WebShop
+        repository: BSZWiesauUnofficial/Andreas_ShopBase
+        token: ${{ secrets.SHOPBASE }}
         path: ShopBase
 
     # Install the .NET Core workload
