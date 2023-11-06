@@ -61,7 +61,7 @@ namespace DesktopApp
             {
                 artikel.Anlegen();
             }
-            this.Close();
+            DialogResult = true;
         }
 
         private void BtnAbr_Click(object sender, RoutedEventArgs e)
@@ -69,7 +69,7 @@ namespace DesktopApp
             MessageBoxResult result = MessageBox.Show("Wirklich Abbrechen?", "WebShop", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
-                this.Close();
+                DialogResult = false;
             }
         }
 
