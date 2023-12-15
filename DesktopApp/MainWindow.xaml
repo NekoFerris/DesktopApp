@@ -11,7 +11,7 @@
     ResizeMode="NoResize"
     mc:Ignorable="d">
     <TabControl x:Name="tabControl">
-        <TabItem Header="Artikel">
+        <TabItem  x:Name="TabArtikel" Header="Artikel" GotFocus="Artikel_GotFocus">
             <Grid>
                 <Button
                     x:Name="btnNeu"
@@ -23,13 +23,11 @@
                     Content="Neu" />
                 <Button
                     x:Name="btnBearbeiten"
-                    Height="20"
                     Margin="41,0,0,10"
                     HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom"
                     Click="BtnBearbeiten_Click"
                     Content="Bearbeiten"
-                    IsEnabled="False" />
+                    IsEnabled="False" Height="20" VerticalAlignment="Bottom" />
                 <Button
                     x:Name="btnLoeschen"
                     Height="20"
@@ -46,11 +44,39 @@
                     SelectionChanged="LbArtikel_SelectionChanged" />
             </Grid>
         </TabItem>
-        <TabItem Header="Kunden">
-            <Grid />
+        <TabItem x:Name="TabKunden" Header="Kunden" GotFocus="Kunden_GotFocus">
+            <Grid>
+                <Button
+                    x:Name="btnKundeBearbeiten"
+                    Height="20"
+                    Margin="0,0,0,10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Click="BtnBearbeiten_Click"
+                    Content="Bearbeiten"
+                    IsEnabled="False" />
+                <Button
+                    x:Name="btnKundeLoeschen"
+                    Height="20"
+                    Margin="66,0,0,10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Click="BtnLoeschen_Click"
+                    Content="Löschen"
+                    IsEnabled="False" />
+                <ListBox
+                    x:Name="lbKunden"
+                    Margin="0,10,0,35"
+                    FontFamily="Lucida Console"
+                    SelectionChanged="LbArtikel_SelectionChanged" />
+            </Grid>
         </TabItem>
-        <TabItem Header="Bestellungen">
-            <Grid />
+        <TabItem x:Name="TabBestellungen" Header="Bestellungen" GotFocus="Bestellungen_GotFocus">
+            <Grid >
+                <ListBox x:Name="lbBestellung" Margin="0,0,0,208" SelectionChanged="LbBestellung_SelectionChanged"/>
+                <ListBox x:Name="lbBestPos" Margin="0,203,100,0" IsEnabled="False"/>
+                <ComboBox x:Name="cbBestStatus" Margin="0,203,0,0" VerticalAlignment="Top" Width="95" Height="22" HorizontalAlignment="Right" SelectionChanged="CbBestStatus_SelectionChanged" IsEnabled="False"/>
+            </Grid>
         </TabItem>
     </TabControl>
 </Window>

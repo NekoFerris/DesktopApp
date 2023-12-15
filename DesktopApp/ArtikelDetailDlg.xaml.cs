@@ -43,8 +43,7 @@ namespace DesktopApp
                 tbBez.Focus();
                 return;
             }
-            string preisstring = artikel.Preis.ToString().Trim().Replace(".", ",");
-            if (preisstring.Where(x => (x == ',')).Count() > 2 || !Double.TryParse(tbPreis.Text, out double preis))
+            if (!Double.TryParse(tbPreis.Text, out double preis))
             {
                 MessageBox.Show("Im Feld Preis muss eine Zahl stehen", "WebShop", MessageBoxButton.OK, MessageBoxImage.Error);
                 tbPreis.Focus();
