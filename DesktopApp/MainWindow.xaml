@@ -11,7 +11,7 @@
     ResizeMode="NoResize"
     mc:Ignorable="d">
     <TabControl x:Name="tabControl">
-        <TabItem  x:Name="TabArtikel" Header="Artikel" GotFocus="Artikel_GotFocus">
+        <TabItem  x:Name="TabArtikel" Header="Artikel">
             <Grid>
                 <Button
                     x:Name="btnNeu"
@@ -44,7 +44,7 @@
                     SelectionChanged="LbArtikel_SelectionChanged" />
             </Grid>
         </TabItem>
-        <TabItem x:Name="TabKunden" Header="Kunden" GotFocus="Kunden_GotFocus">
+        <TabItem x:Name="TabKunden" Header="Kunden">
             <Grid>
                 <Button
                     x:Name="btnKundeBearbeiten"
@@ -52,26 +52,23 @@
                     Margin="0,0,0,10"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Click="BtnBearbeiten_Click"
                     Content="Bearbeiten"
-                    IsEnabled="False" />
+                    IsEnabled="False" Click="BtnKundeBearbeiten_Click" />
                 <Button
                     x:Name="btnKundeLoeschen"
                     Height="20"
                     Margin="66,0,0,10"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Click="BtnLoeschen_Click"
                     Content="Löschen"
-                    IsEnabled="False" />
+                    IsEnabled="False" Click="BtnKundeLoeschen_Click" />
                 <ListBox
                     x:Name="lbKunden"
                     Margin="0,10,0,35"
-                    FontFamily="Lucida Console"
-                    SelectionChanged="LbArtikel_SelectionChanged" />
+                    FontFamily="Lucida Console" SelectionChanged="LbKunden_SelectionChanged"/>
             </Grid>
         </TabItem>
-        <TabItem x:Name="TabBestellungen" Header="Bestellungen" GotFocus="Bestellungen_GotFocus">
+        <TabItem x:Name="TabBestellungen" Header="Bestellungen">
             <Grid >
                 <ListBox x:Name="lbBestellung" Margin="0,0,0,208" SelectionChanged="LbBestellung_SelectionChanged"/>
                 <ListBox x:Name="lbBestPos" Margin="0,203,100,0" IsEnabled="False"/>

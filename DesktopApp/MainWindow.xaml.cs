@@ -76,6 +76,14 @@ namespace FWIWebShop
             }
         }
 
+        private void UpdateBestPosList() 
+        {
+            foreach (BestellPos bestellPos in Bestellung.LstBestPoss)
+            {
+                lbBestPos.Items.Add(bestellPos);
+            }
+        }
+
         private void LbArtikel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             btnBearbeiten.IsEnabled = btnLoeschen.IsEnabled = lbArtikel.SelectedItem != null;
@@ -88,10 +96,7 @@ namespace FWIWebShop
                 Bestellung = (Bestellung)lbBestellung.SelectedItem;
                 cbBestStatus.SelectedItem = Bestellung.BestellStatus;
                 lbBestPos.Items.Clear();
-                foreach(BestellPos bestellPos in Bestellung.LstBestPoss)
-                {
-                    lbBestPos.Items.Add(bestellPos);
-                }
+                UpdateBestPosList();
                 if (lbBestPos.Items.Count > 0)
                 {
                     lbBestPos.IsEnabled = true;
@@ -110,19 +115,36 @@ namespace FWIWebShop
             }
         }
 
-        private void Artikel_GotFocus(object sender, RoutedEventArgs e)
+        private void BtnKundeLoeschen_Click(object sender, RoutedEventArgs e)
         {
-            UpdateArtikelList();
+            if (lbKunden.SelectedItem != null)
+            {
+                Kunde.Loeschen((Kunde)lbKunden.SelectedItem);
+            }
         }
 
-        private void Kunden_GotFocus(object sender, RoutedEventArgs e)
+        private void BtnKundeBearbeiten_Click(object sender, RoutedEventArgs e)
         {
-            UpdateKundeList();
+            if (lbKunden.SelectedItem != null)
+            {
+                KundeDetailDlg kundeDetailDlg = new KundeDetailDlg((Kunde)lbKunden.SelectedItem);
+                kundeDetailDlg.ShowDialog();
+                UpdateKundeList();
+            }
         }
 
-        private void Bestellungen_GotFocus(object sender, RoutedEventArgs e)
+        private void LbKunden_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            UpdateBestellungList();
+            if(lbKunden.SelectedItem != null)
+            {
+                btnKundeLoeschen.IsEnabled = true;
+                btnKundeBearbeiten.IsEnabled = true;
+            }
+            else
+            {
+                btnKundeLoeschen.IsEnabled = false;
+                btnKundeBearbeiten.IsEnabled = false;
+            }
         }
     }
 }
