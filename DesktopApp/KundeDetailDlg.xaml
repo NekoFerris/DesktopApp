@@ -19,9 +19,9 @@
         <TextBox x:Name="tbEmail" IsEnabled="False" HorizontalAlignment="Left" Margin="101,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="129"/>
         <ComboBox x:Name="cbGeschlecht" HorizontalAlignment="Left" Margin="101,90,0,0" VerticalAlignment="Top" Width="129"/>
         <Label x:Name="lbGeschlecht" Content="Geschlecht" HorizontalAlignment="Left" Margin="9,88,0,0" VerticalAlignment="Top" Width="74"/>
-        <Button x:Name="btBestaetigen" Content="Bestätigen" HorizontalAlignment="Left" Margin="10,0,0,7" Width="52" Height="20" VerticalAlignment="Bottom"/>
-        <Button x:Name="btAbbrechen" Content="Abbrechen" HorizontalAlignment="Left" Margin="67,0,0,7" Height="20" VerticalAlignment="Bottom" Click="btAbbrechen_Click"/>
-        <Button x:Name="btPasswort" Content="Neues Passwort" HorizontalAlignment="Left" Margin="134,0,0,7" Width="96" Height="20" VerticalAlignment="Bottom"/>
+        <Button x:Name="btBestaetigen" Content="Bestätigen" HorizontalAlignment="Left" Margin="10,0,0,7" Width="52" Height="20" VerticalAlignment="Bottom" Click="BtBestaetigen_Click"/>
+        <Button x:Name="btAbbrechen" Content="Abbrechen" HorizontalAlignment="Left" Margin="67,0,0,7" Height="20" VerticalAlignment="Bottom" Click="BtAbbrechen_Click"/>
+        <Button x:Name="btPasswort" Content="Neues Passwort" HorizontalAlignment="Left" Margin="134,0,0,7" Width="96" Height="20" VerticalAlignment="Bottom" Click="btPasswort_Click"/>
 
     </Grid>
 </Window>
