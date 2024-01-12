@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Microsoft.Win32;
+using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace DesktopApp
 {
@@ -61,6 +63,14 @@ namespace DesktopApp
                 artikel.Anlegen();
             }
             DialogResult = true;
+        }
+
+        private void btnDatei_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new();
+            dialog.Multiselect = false;
+            dialog.Filter = "Bilder | *.jpg;*.png;*.bmp;*.jpeg;*.webp";
+            dialog.ShowDialog();
         }
 
         private void BtnAbr_Click(object sender, RoutedEventArgs e)

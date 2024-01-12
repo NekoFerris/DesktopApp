@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:DesktopApp"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Artikel Detail Dialog"
-    Width="235"
+    Width="425"
     Height="250"
     ResizeMode="NoResize"
     mc:Ignorable="d">
@@ -82,5 +82,7 @@
             VerticalAlignment="Bottom"
             Click="BtnZur_Click"
             Content="Zurücksetzen" />
+        <Image x:Name="imgArtikel" HorizontalAlignment="Left" Height="180" Margin="229,10,0,0" VerticalAlignment="Top" Width="180"/>
+        <Button x:Name="btnDatei" Content="Bild Ändern" HorizontalAlignment="Left" Margin="229,203,0,0" VerticalAlignment="Top" Click="btnDatei_Click"/>
     </Grid>
 </Window>
