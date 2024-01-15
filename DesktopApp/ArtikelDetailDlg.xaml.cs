@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
+using ShopBase;
 using System.Drawing.Imaging;
 using System.Windows;
-using System.Windows.Media;
 
 namespace DesktopApp
 {
@@ -12,6 +12,7 @@ namespace DesktopApp
     {
         private readonly int id;
         private readonly string? bezeichnung, beschreibung, preis;
+        private ShopImage? ShopImage;
         private readonly bool aendern = false;
 
         public ArtikelDetailDlg(Artikel? artikel)
@@ -25,6 +26,10 @@ namespace DesktopApp
                 tbBesch.Text = beschreibung = artikel.Beschreibung;
                 tbPreis.Text = preis = artikel.Preis.ToString();
                 Title = $"\"{bezeichnung}\" bearbeiten";
+                if(artikel.ShopImage != null)
+                {
+                    ImgUtil.ToImageSource(artikel.ShopImage.GetImage(), ImageFormat.Jpeg);
+                }
             }
             else
             {
@@ -54,10 +59,14 @@ namespace DesktopApp
             }
             artikel.Bezeichnung = bez;
             artikel.Preis = preis;
+            if (ShopImage != null)
+            {
+                artikel.ShopImage = ShopImage;
+            }
             if (aendern)
             {
                 artikel.Id = id;
-                artikel.Aendern();
+                artikel.Aktualisieren();
             }
             else
             {
@@ -74,8 +83,13 @@ namespace DesktopApp
                 Filter = "Bilder | *.jpg;*.png;*.bmp;*.jpeg;*.webp"
             };
             dialog.ShowDialog();
-            ShopImage shopImage = new(dialog.FileName);
-            imgArtikel.Source = ImgUtil.ToImageSource(shopImage.GetImage(), ImageFormat.Jpeg);
+            if (dialog.FileName != null)
+            {
+                ShopImage shopImage = new(dialog.FileName);
+                shopImage.Id = id;
+                ShopImage = shopImage;
+                imgArtikel.Source = ImgUtil.ToImageSource(shopImage.GetImage(), ImageFormat.Jpeg);
+            }
         }
 
         private void BtnAbr_Click(object sender, RoutedEventArgs e)

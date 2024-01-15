@@ -82,7 +82,20 @@
             VerticalAlignment="Bottom"
             Click="BtnZur_Click"
             Content="Zurücksetzen" />
-        <Image x:Name="imgArtikel" HorizontalAlignment="Left" Height="180" Margin="229,10,0,0" VerticalAlignment="Top" Width="180"/>
-        <Button x:Name="btnDatei" Content="Bild Ändern" HorizontalAlignment="Left" Margin="229,203,0,0" VerticalAlignment="Top" Click="BtnDatei_Click"/>
+        <Image
+            x:Name="imgArtikel"
+            Width="180"
+            Height="180"
+            Margin="229,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <Button
+            x:Name="btnDatei"
+            Height="20"
+            Margin="229,0,0,11"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Click="BtnDatei_Click"
+            Content="Bild Ändern" />
     </Grid>
 </Window>
