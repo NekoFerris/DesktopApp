@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
+using System.Drawing.Imaging;
 using System.Windows;
-using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace DesktopApp
 {
@@ -65,12 +66,16 @@ namespace DesktopApp
             DialogResult = true;
         }
 
-        private void btnDatei_Click(object sender, RoutedEventArgs e)
+        private void BtnDatei_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dialog = new();
-            dialog.Multiselect = false;
-            dialog.Filter = "Bilder | *.jpg;*.png;*.bmp;*.jpeg;*.webp";
+            OpenFileDialog dialog = new()
+            {
+                Multiselect = false,
+                Filter = "Bilder | *.jpg;*.png;*.bmp;*.jpeg;*.webp"
+            };
             dialog.ShowDialog();
+            ShopImage shopImage = new(dialog.FileName);
+            imgArtikel.Source = ImgUtil.ToImageSource(shopImage.GetImage(), ImageFormat.Jpeg);
         }
 
         private void BtnAbr_Click(object sender, RoutedEventArgs e)
