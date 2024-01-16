@@ -1,5 +1,4 @@
 ﻿using Microsoft.Win32;
-using ShopBase;
 using System.Drawing.Imaging;
 using System.Windows;
 
@@ -28,7 +27,7 @@ namespace DesktopApp
                 Title = $"\"{bezeichnung}\" bearbeiten";
                 if(artikel.ShopImage != null)
                 {
-                    ImgUtil.ToImageSource(artikel.ShopImage.GetImage(), ImageFormat.Jpeg);
+                    imgArtikel.Source = ImgUtil.ToImageSource(artikel.ShopImage.GetImage(), ImageFormat.Jpeg);
                 }
             }
             else
