@@ -64,14 +64,31 @@ namespace DesktopApp
             }
             if (aendern)
             {
-                artikel.Id = id;
-                artikel.Aktualisieren();
+                try
+                {
+                    artikel.Id = id;
+                    artikel.Aktualisieren();
+                    DialogResult = true;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    artikel = Artikel.Lesen(artikel.Id);
+                    tbBez.Text  = artikel.Bezeichnung;
+                    tbBesch.Text  = artikel.Beschreibung;
+                    tbPreis.Text = artikel.Preis.ToString();
+                    Title = $"\"{bezeichnung}\" bearbeiten";
+                    if (artikel.ShopImage != null)
+                    {
+                        imgArtikel.Source = ImgUtil.ToImageSource(artikel.ShopImage.GetImage(), ImageFormat.Jpeg);
+                    }
+                }
             }
             else
             {
                 artikel.Anlegen();
+                DialogResult = true;
             }
-            DialogResult = true;
         }
 
         private void BtnDatei_Click(object sender, RoutedEventArgs e)
