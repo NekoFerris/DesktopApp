@@ -70,7 +70,7 @@ namespace DesktopApp
                     artikel.Aktualisieren();
                     DialogResult = true;
                 }
-                catch(Exception ex)
+                catch(MultiUserAccessException ex)
                 {
                     MessageBox.Show(ex.Message);
                     artikel = Artikel.Lesen(artikel.Id);
