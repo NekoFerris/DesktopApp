@@ -25,9 +25,9 @@ namespace DesktopApp
                 tbBesch.Text = beschreibung = artikel.Beschreibung;
                 tbPreis.Text = preis = artikel.Preis.ToString();
                 Title = $"\"{bezeichnung}\" bearbeiten";
-                if(artikel.ShopImage != null)
+                if (artikel.ShopImage != null)
                 {
-                    imgArtikel.Source = ImgUtil.ToImageSource(artikel.ShopImage.GetImage(), ImageFormat.Jpeg);
+                    imgArtikel.Source = ImgUtil.ToImageSource(artikel.ShopImage.GetImage, ImageFormat.Jpeg);
                 }
             }
             else
@@ -70,17 +70,17 @@ namespace DesktopApp
                     artikel.Aktualisieren();
                     DialogResult = true;
                 }
-                catch(MultiUserAccessException ex)
+                catch (MultiUserAccessException ex)
                 {
                     MessageBox.Show(ex.Message);
                     artikel = Artikel.Lesen(artikel.Id);
-                    tbBez.Text  = artikel.Bezeichnung;
-                    tbBesch.Text  = artikel.Beschreibung;
+                    tbBez.Text = artikel.Bezeichnung;
+                    tbBesch.Text = artikel.Beschreibung;
                     tbPreis.Text = artikel.Preis.ToString();
                     Title = $"\"{bezeichnung}\" bearbeiten";
                     if (artikel.ShopImage != null)
                     {
-                        imgArtikel.Source = ImgUtil.ToImageSource(artikel.ShopImage.GetImage(), ImageFormat.Jpeg);
+                        imgArtikel.Source = ImgUtil.ToImageSource(artikel.ShopImage.GetImage, ImageFormat.Jpeg);
                     }
                 }
             }
@@ -104,7 +104,7 @@ namespace DesktopApp
                 ShopImage shopImage = new(dialog.FileName);
                 shopImage.Id = id;
                 ShopImage = shopImage;
-                imgArtikel.Source = ImgUtil.ToImageSource(shopImage.GetImage(), ImageFormat.Jpeg);
+                imgArtikel.Source = ImgUtil.ToImageSource(shopImage.GetImage, ImageFormat.Jpeg);
             }
         }
 
